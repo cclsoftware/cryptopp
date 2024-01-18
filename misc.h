@@ -257,7 +257,10 @@ private:
 template <class T>
 struct NewObject
 {
-	T* operator()() const {return new T;}
+	// -- CCL --
+	// was: T* operator()() const {return new T;}
+	T* operator()() const {static T theT; return &theT;}
+	// -- CCL --
 };
 
 #if CRYPTOPP_DOXYGEN_PROCESSING

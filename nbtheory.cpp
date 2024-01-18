@@ -202,7 +202,11 @@ struct NewLastSmallPrimeSquared
 {
 	Integer * operator()() const
 	{
-		return new Integer(Integer(s_lastSmallPrime).Squared());
+		// -- CCL --
+		// was: return new Integer(Integer(s_lastSmallPrime).Squared());
+		static Integer theInteger(Integer(s_lastSmallPrime).Squared());
+		return &theInteger;
+		// -- CCL --
 	}
 };
 

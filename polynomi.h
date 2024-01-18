@@ -303,7 +303,11 @@ private:
 	{
 		ThisType * operator()() const
 		{
-			return new ThisType(ms_fixedRing.MultiplicativeIdentity());
+			// -- CCL --
+			// was: return new ThisType(ms_fixedRing.MultiplicativeIdentity());
+			static ThisType theType(ms_fixedRing.MultiplicativeIdentity());
+			return &theType;
+			// -- CCL --
 		}
 	};
 
