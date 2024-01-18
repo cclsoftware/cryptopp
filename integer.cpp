@@ -77,6 +77,7 @@
 
 #if (CRYPTOPP_MSC_VERSION >= 1400) && !defined(_M_ARM)
 	#include <intrin.h>
+	#include <windows.h>
 #endif
 
 #ifdef __DECCXX

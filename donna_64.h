@@ -16,6 +16,7 @@
 
 #if defined(CRYPTOPP_MSC_VERSION)
 # include <intrin.h>
+# include <windows.h>
 # pragma intrinsic(_umul128)
 # pragma intrinsic(__shiftright128)
 #endif
