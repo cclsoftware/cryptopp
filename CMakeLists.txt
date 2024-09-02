@@ -516,7 +516,7 @@ endif()
 set(cryptopp_SOURCES_ASM)
 
 if (MSVC AND NOT DISABLE_ASM)
-  if (${CMAKE_GENERATOR_PLATFORM} MATCHES ".*arm.*")
+  if (${CMAKE_GENERATOR_PLATFORM} MATCHES ".*arm(64)?$")
     message(STATUS "Disabling ASM because ARM is specified as target platform.")
   else ()
     enable_language(ASM_MASM)
